@@ -3,8 +3,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import { typescriptPaths } from 'rollup-plugin-typescript-paths';
 import dts from 'vite-plugin-dts';
+import viteTsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig(({ mode }) => {
 	const isProduction = mode === 'production';
@@ -13,10 +13,13 @@ export default defineConfig(({ mode }) => {
 		root: isProduction ? undefined : 'stories',
 		plugins: [
 			react(),
+			viteTsconfigPaths(),
 			dts({
-				tsconfigPath: path.resolve(__dirname, 'tsconfig.json'),
-				outDir: 'dist',
+				tsconfigPath: 'tsconfig.json',
 				insertTypesEntry: true,
+				outDir: 'dist/types',
+				cleanVueFileName: true,
+				staticImport: true
 			}),
 		],
 		resolve: {
@@ -28,33 +31,21 @@ export default defineConfig(({ mode }) => {
 			],
 		},
 		build: {
-			manifest: true,
-			minify: true,
-			reportCompressedSize: true,
 			lib: {
-				entry: path.resolve(__dirname, 'src/index.tsx'),
-				name: 'SplitPaneComponent',
-				fileName: format => `split-pane-component.${format}.js`,
-				formats: ['es', 'cjs'],
+				entry: path.resolve('src/index.ts'),
+				name: 'split-pane-component',
+				fileName: (format) => `split-pane-component.${format}.js`
 			},
 			rollupOptions: {
 				external: ['react', 'react-dom'],
 				output: {
 					globals: {
-						react: 'React',
-						'react-dom': 'ReactDOM',
-					},
-					exports: 'named',
-				},
-				plugins: [
-					typescriptPaths({
-						preserveExtensions: true,
-					}),
-				],
-			},
+						react: 'React'
+					}
+				}
+			}
 		},
 		server: {
-			open: true,
 			port: 4002
 		},
 	};

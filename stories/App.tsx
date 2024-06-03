@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import SplitPaneComponent from '../src'
+import SplitPaneComponent from '../src/components/SplitPaneComponent'
 import './App.scss'
 
  const App = (): ReactElement => {
