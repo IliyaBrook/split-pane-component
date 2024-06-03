@@ -20,10 +20,10 @@ yarn add split-pane-component
 
 ```jsx
 import React from 'react';
-import SplitPane from 'split-pane-component';
+import SplitPaneComponent from 'split-pane-component';
 
 const App = () => (
-  <SplitPane
+  <SplitPaneComponent
     split="vertical"
     minSize={50}
     defaultSize={100}
@@ -36,7 +36,7 @@ const App = () => (
   >
     <div>Pane 1</div>
     <div>Pane 2</div>
-  </SplitPane>
+  </SplitPaneComponent>
 );
 
 export default App;

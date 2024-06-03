@@ -7,9 +7,9 @@ export default defineConfig({
 	plugins: [react(), tsconfigPaths()],
 	build: {
 		lib: {
-			entry: 'src/SplitPane.tsx',
+			entry: 'src/index.ts',
 			name: 'SplitPaneComponent',
-			fileName: (format) => `split-pane-component.${format}.js`
+			fileName: (format) => `index.${format}.js`
 		},
 		rollupOptions: {
 			external: ['react', 'react-dom'],
@@ -17,7 +17,8 @@ export default defineConfig({
 				globals: {
 					react: 'React',
 					'react-dom': 'ReactDOM'
-				}
+				},
+				exports: 'named'
 			}
 		}
 	}

@@ -4,7 +4,7 @@ import Pane from './Pane'
 import Resizer from './Resizer'
 import styles from './SplitPane.module.scss'
 
-const SplitPane: React.FC<SplitPaneProps> = ({
+const SplitPaneComponent: React.FC<SplitPaneProps> = ({
 	children,
 	onResize,
 	split = 'vertical',
@@ -86,4 +86,4 @@ const SplitPane: React.FC<SplitPaneProps> = ({
 	)
 }
 
-export default SplitPane
+export default SplitPaneComponent
