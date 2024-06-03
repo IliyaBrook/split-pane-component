@@ -1,7 +1,7 @@
 {
 	"name": "split-pane-component",
 	"description": "A React component for creating split panes.",
-	"version": "1.0.16",
+	"version": "1.0.18",
 	"type": "module",
 	"main": "dist/split-pane-component.umd.js",
 	"module": "dist/split-pane-component.es.js",
@@ -36,8 +36,6 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"rollup-plugin-typescript-paths": "^1.5.0",
-		"vite-plugin-dts": "^3.9.1",
 		"@babel/core": "^7.13.16",
 		"@babel/preset-env": "^7.13.15",
 		"@babel/preset-react": "^7.13.13",
@@ -50,11 +48,16 @@
 		"eslint-plugin-prettier": "^5.1.3",
 		"eslint-plugin-react": "^7.34.1",
 		"eslint-plugin-react-hooks": "^4.6.0",
+		"postcss": "^8.4.38",
+		"postcss-modules": "^6.0.0",
 		"prettier": "^3.2.5",
+		"rollup-plugin-postcss": "^4.0.2",
+		"rollup-plugin-typescript-paths": "^1.5.0",
 		"sass": "^1.77.4",
 		"typescript": "^5.2.2",
 		"typescript-plugin-css-modules": "^5.1.0",
 		"vite": "^5.2.0",
+		"vite-plugin-dts": "^3.9.1",
 		"vite-plugin-react": "^4.0.1",
 		"vite-tsconfig-paths": "^4.3.2"
 	},
