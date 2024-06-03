@@ -1,6 +1,6 @@
 {
 	"name": "split-pane-component",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A React component for creating split panes.",
 	"main": "dist/index.js",
 	"module": "dist/index.js",
