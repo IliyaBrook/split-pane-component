@@ -1,4 +1,4 @@
-# Split Pane Component
+# Split Index Component
 
 A powerful and flexible React component for creating resizable split panes. Compatible with React 18 and built with Vite.
 
@@ -20,10 +20,10 @@ yarn add split-pane-component
 
 ```jsx
 import React from 'react';
-import SplitPaneComponent from 'split-pane-component';
+import Index from 'split-pane-component';
 
 const App = () => (
-  <SplitPaneComponent
+  <Index
     split="vertical"
     minSize={50}
     defaultSize={100}
@@ -34,9 +34,9 @@ const App = () => (
     style={{ border: '1px solid black' }}
     disableHoverEffect={false}
   >
-    <div>Pane 1</div>
-    <div>Pane 2</div>
-  </SplitPaneComponent>
+    <div>Index 1</div>
+    <div>Index 2</div>
+  </Index>
 );
 
 export default App;
