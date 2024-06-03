@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './SplitPane.module.scss'
+import styles from './index.module.scss'
 
 interface PaneProps {
 	children: React.ReactNode

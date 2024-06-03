@@ -1,6 +1,6 @@
 import type { ResizerProps } from './type'
 import React, { useState } from 'react'
-import styles from './SplitPane.module.scss'
+import styles from './index.module.scss'
 
 const Resizer: React.FC<ResizerProps> = ({
 	onMouseDown,

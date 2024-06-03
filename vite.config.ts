@@ -1,14 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react(), tsconfigPaths()],
+	root: 'stories',
+	plugins: [react()],
+	resolve: {
+		alias: {
+			'@': '/src'
+		}
+	},
 	build: {
+		outDir: '../dist',
 		lib: {
 			entry: 'src/index.ts',
 			name: 'SplitPaneComponent',
+			formats: ['es', 'cjs'],
 			fileName: (format) => `index.${format}.js`
 		},
 		rollupOptions: {
@@ -21,5 +27,9 @@ export default defineConfig({
 				exports: 'named'
 			}
 		}
+	},
+	server: {
+		
+		open: true
 	}
 });

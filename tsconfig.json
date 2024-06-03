@@ -3,11 +3,13 @@
 		"target": "esnext",
 		"module": "esnext",
 		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": false,
+		"allowJs": true,
 		"skipLibCheck": true,
 		"esModuleInterop": true,
+		"allowImportingTsExtensions": true,
 		"allowSyntheticDefaultImports": true,
-		"strict": true,
+		"noEmit": true,
+		"strict": false,
 		"forceConsistentCasingInFileNames": true,
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
@@ -15,8 +17,8 @@
 		"jsx": "react-jsx",
 		"baseUrl": "./",
 		"declaration": true,
-		"declarationDir": "dist",
-		"emitDeclarationOnly": true
+		"declarationDir": "dist"
 	},
-	"include": ["src", "global.d.ts"]
+	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./stories/**/*.ts", "./src/stories/*.tsx"],
+	"exclude": ["node_modules"]
 }
