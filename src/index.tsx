@@ -2,7 +2,7 @@ import type { SplitPaneProps } from '@/types'
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import Pane from '@/Pane'
 import Resizer from '@/Resizer'
-import styles from '@/index.module.scss'
+import styles from '@/style.module.scss'
 
 const SplitPaneComponent: React.FC<SplitPaneProps> = ({
 	                                                      children,
