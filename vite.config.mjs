@@ -5,9 +5,9 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
 	const isProduction = mode === 'production';
-	const root = isProduction ? undefined : 'stories';
+	
 	return {
-		root,
+		root: isProduction ? undefined : 'stories',
 		plugins: [react()],
 		resolve: {
 			alias: {
