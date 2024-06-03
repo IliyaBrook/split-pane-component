@@ -2,6 +2,8 @@
 
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
+import { typescriptPaths } from 'rollup-plugin-typescript-paths';
 
 export default defineConfig(({ mode }) => {
 	const isProduction = mode === 'production';
@@ -10,17 +12,22 @@ export default defineConfig(({ mode }) => {
 		root: isProduction ? undefined : 'stories',
 		plugins: [react()],
 		resolve: {
-			alias: {
-				'@': '/src'
-			}
+			alias: [
+				{
+					find: '~',
+					replacement: path.resolve(__dirname, './src'),
+				},
+			],
 		},
 		build: {
-			outDir: 'dist',
+			manifest: true,
+			minify: true,
+			reportCompressedSize: true,
 			lib: {
-				entry: 'src/index.tsx',
+				entry: path.resolve(__dirname, 'src/index.tsx'),
 				name: 'SplitPaneComponent',
-				formats: ['es', 'cjs'],
-				fileName: (format) => `index.${format}.js`
+				fileName: format => `split-pane-component.${format}.js`,
+				formats: ['es', 'cjs']
 			},
 			rollupOptions: {
 				external: ['react', 'react-dom'],
@@ -30,11 +37,17 @@ export default defineConfig(({ mode }) => {
 						'react-dom': 'ReactDOM'
 					},
 					exports: 'named'
-				}
-			}
+				},
+				plugins: [
+					typescriptPaths({
+						preserveExtensions: true,
+					}),
+				],
+			},
 		},
 		server: {
-			open: true
+			open: true,
+			port: 4002
 		}
 	};
 });

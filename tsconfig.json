@@ -1,11 +1,12 @@
 {
 	"compilerOptions": {
 		"target": "esnext",
-		"module": "esnext",
+		"module": "ESNext",
 		"lib": ["dom", "dom.iterable", "esnext"],
+		"types": ["vite/client", "node"],
 		"allowJs": true,
 		"skipLibCheck": true,
-		"esModuleInterop": true,
+		"esModuleInterop": false,
 		"allowImportingTsExtensions": true,
 		"allowSyntheticDefaultImports": true,
 		"noEmit": true,
@@ -16,9 +17,14 @@
 		"isolatedModules": true,
 		"jsx": "react-jsx",
 		"baseUrl": "./",
-		"declaration": true,
-		"declarationDir": "dist"
+//		"declaration": true,
+//		"declarationDir": "dist",
+//		"outDir": "./dist",
+//		"rootDir": "./src"
+		"paths": {
+			"~/*": ["src/*"]
+		}
 	},
-	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./stories/**/*.ts", "./src/stories/*.tsx"],
-	"exclude": ["node_modules", "vite.config.mjs"]
+	"include": ["./src", "./stories"],
+	"exclude": ["node_modules"]
 }

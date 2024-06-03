@@ -1,7 +1,5 @@
 import React, { type CSSProperties, type ReactNode } from 'react'
 
-export type Size = string | number
-
 export type onResizeSplitPane = (newSize: number[]) => void
 
 export type SplitPaneSplitType = 'vertical' | 'horizontal'
