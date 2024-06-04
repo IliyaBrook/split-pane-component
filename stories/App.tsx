@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import './App.scss'
-import SplitPaneComponent from '../src'
+import SplitPaneComponent from '../src/components/SplitPaneComponent/SplitPaneComponent'
 
  const App = (): ReactElement => {
 	return (

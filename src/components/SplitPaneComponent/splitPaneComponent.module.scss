@@ -1,0 +1,14 @@
+.root {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	
+	&.vertical {
+		flex-direction: row;
+	}
+	
+	&.horizontal {
+		flex-direction: column;
+	}
+	
+}

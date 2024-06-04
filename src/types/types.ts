@@ -21,4 +21,5 @@ export interface ResizerProps {
 	dragging: boolean
 	className?: string
 	disableHoverEffect?: boolean
+	split: SplitPaneSplitType
 }

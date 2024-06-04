@@ -1,11 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import viteTsconfigPaths from 'vite-tsconfig-paths'
-import path from 'path'
-import dts from 'vite-plugin-dts'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import viteTsconfigPaths from 'vite-tsconfig-paths';
+import path from 'path';
+import dts from 'vite-plugin-dts';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode}) => {
+export default defineConfig(({ mode }) => {
 	const isProduction = mode === 'production';
 	return {
 		root: isProduction ? undefined : 'stories',
@@ -19,6 +20,7 @@ export default defineConfig(({mode}) => {
 				cleanVueFileName: true,
 				staticImport: true,
 			}),
+			cssInjectedByJsPlugin(),
 		],
 		resolve: {
 			alias: {
@@ -27,7 +29,7 @@ export default defineConfig(({mode}) => {
 		},
 		build: {
 			lib: {
-				entry: path.resolve('src/index.tsx'),
+				entry: path.resolve('src/index.ts'),
 				name: 'split-pane-component',
 				fileName: (format) => `split-pane-component.${format}.js`,
 			},
@@ -38,11 +40,11 @@ export default defineConfig(({mode}) => {
 						react: 'React',
 						'react-dom': 'ReactDOM',
 					},
-				}
-			}
+				},
+			},
 		},
 		server: {
-			port: 4002
+			port: 4002,
 		},
-	}
-})
+	};
+});

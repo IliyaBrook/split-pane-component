@@ -1,12 +1,12 @@
-import type { ResizerProps } from '@/types'
+import type { ResizerProps } from '@/types/types'
 import React, { useState } from 'react'
-import styles from '@/style.module.scss'
+import styles from './resizer.module.scss'
 
 const Resizer: React.FC<ResizerProps> = ({
 	onMouseDown,
 	onMouseUp,
 	dragging,
-	className,
+	split,
 	disableHoverEffect
 }) => {
 	const [mouseOver, setMouseOver] = useState<boolean>(false)
@@ -28,7 +28,7 @@ const Resizer: React.FC<ResizerProps> = ({
 
 	return (
 		<div
-			className={`${styles.Resizer} ${mouseOver ? styles.hover : ''}  ${className || ''} ${hasMouseExited ? styles.reverse : ''} ${disableHoverEffect ? styles.disableHoverEffect : ''}`}
+			className={`${styles.Resizer} ${mouseOver ? styles.hover : ''} ${split === 'vertical' ? styles.vertical : styles.horizontal} ${hasMouseExited ? styles.reverse : ''} ${disableHoverEffect ? styles.disableHoverEffect : ''}`}
 			onMouseDown={onMouseDown}
 			onMouseUp={onMouseUp}
 			onMouseEnter={handleMouseEnter}

@@ -1,8 +1,8 @@
-import type { SplitPaneProps } from '@/types'
+import type { SplitPaneProps } from '@/types/types'
 import React, { useLayoutEffect, useRef, useState } from 'react'
-import Pane from '@/Pane'
-import Resizer from '@/Resizer'
-import styles from '@/style.module.scss'
+import Pane from '@/components/Pane/Pane'
+import Resizer from '@/components/Resizer/Resizer'
+import styles from './splitPaneComponent.module.scss'
 
 const SplitPaneComponent: React.FC<SplitPaneProps> = ({
 	                                                      children,
@@ -78,7 +78,7 @@ const SplitPaneComponent: React.FC<SplitPaneProps> = ({
 				onMouseDown={onMouseDown}
 				onMouseUp={onMouseUp}
 				dragging={dragging}
-				className={`${split === 'vertical' ? styles.vertical : styles.horizontal}`}
+				split={split}
 				disableHoverEffect={disableHoverEffect}
 			/>
 			<Pane style={{ flex: `${sizes[1]}%` }}>{children[1]}</Pane>
