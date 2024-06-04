@@ -61,5 +61,6 @@ export default App;
 yarn dev
 ```
 
+## Demo
 
-To include the GIF in your `README.md`, replace `assets/demo.gif` with the actual path to the GIF file in your repository. Ensure the GIF file is committed and pushed to your repository so it is accessible from the specified path.
+![image](./assets/demo.gif)
