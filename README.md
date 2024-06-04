@@ -25,8 +25,6 @@ import Index from 'split-pane-component';
 const App = () => (
   <Index
     split="vertical"
-    minSize={50}
-    defaultSize={100}
     maxSize={200}
     onDragStarted={() => console.log('Drag started')}
     onDragFinished={(newSize) => console.log('Drag finished, new size:', newSize)}
@@ -55,3 +53,13 @@ export default App;
 ## License
 ### This project is licensed under the MIT License.
 
+## Development
+
+* **The project uses the stories directory for development. To start the development server, you can use the following script**
+
+```sh
+yarn dev
+```
+
+
+To include the GIF in your `README.md`, replace `assets/demo.gif` with the actual path to the GIF file in your repository. Ensure the GIF file is committed and pushed to your repository so it is accessible from the specified path.
