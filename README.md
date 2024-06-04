@@ -63,4 +63,5 @@ yarn dev
 
 ## Demo
 
+[Open Demo](https://github.com/IliyaBrook/split-pane-component/blob/master/assets/demo.gif)
 ![image](https://github.com/IliyaBrook/split-pane-component/blob/master/assets/demo.gif)
